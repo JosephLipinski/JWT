@@ -12,7 +12,7 @@ class User(object):
         return "User(id='%s')" % self.id
 
 users = [
-    User(1, 'user1', 'abcxyz'),
+    User(1, 'joe', 'pass'),
     User(2, 'user2', 'abcxyz'),
 ]
 
@@ -21,6 +21,7 @@ userid_table = {u.id: u for u in users}
 
 def authenticate(username, password):
     user = username_table.get(username, None)
+    print(user)
     if user and safe_str_cmp(user.password.encode('utf-8'), password.encode('utf-8')):
         return user
 
@@ -37,7 +38,7 @@ jwt = JWT(app, authenticate, identity)
 @app.route('/protected')
 @jwt_required()
 def protected():
-    return '%s' % current_identity
+    return "Successfully called the endpoint"
 
 if __name__ == '__main__':
     app.run()
