@@ -1,13 +1,13 @@
 # JWT
 
-##Download the requirements:
+Download the requirements:
 
-pip3 install -r requirements.txt
+> pip3 install -r requirements.txt
 
-##To run the simple flask server:
+To run the simple flask server:
 
-python Server.py
+> python Server.py
 
-##Test the server:
+Test the server:
 
-python test.py
+> python test.py
